@@ -1,0 +1,26 @@
+<div class="container">
+<div class="col-md-2 col-md-offset-2 col-xs-3">
+
+<%= image_tag @user.image , :class => 'img-responsive'%>
+
+</div>
+
+ <div class="col-md-6 col-xs-9">
+<div class="panel">
+<h1><%= @user.name %></h1>
+<% if @user.provider.to_s == "google_oauth2" %>
+<a class="btn btn-social-icon btn-google" href="https://plus.google.com/<%= @user.uid  %>"><span class="fa fa-google"></span></a><% end %>
+
+</div>
+</div>
+</div>
+<div class="container">
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+<div class="panel">
+<h1><%= @user.name %></h1>
+<%= @user.username %>
+<p>Find me in app/views/users/show.html.erb</p>
+<%= @user.uid %>
+</div>
+</div>
+</div>

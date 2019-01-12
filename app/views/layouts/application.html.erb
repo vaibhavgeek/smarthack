@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">SmartMirror</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        
+
+          <ul class="nav navbar-nav navbar-right">
+            
+  <li>
+  <%= link_to "Customers", current_user %>
+
+  </li>
+  <li>
+  <%= link_to('Shirts', destroy_user_session_path, :method => :delete) %>        
+  </li>
+
+<% else %>
+  <li>
+  <%= link_to('Pants', new_user_session_path)  %>  
+  </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <%= yield %>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  </body>
+</html>
